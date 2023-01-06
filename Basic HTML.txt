@@ -1,0 +1,73 @@
+Thẻ (tag), thuộc tính (attribute) là gì
++ Tag : là một phần của phần tử HTML, giúp trình duyệt web chuyển đổi tài liệu HTML thành trang web
++ Attribute : là 1 thông tin nào đó liên quan đến phần tử
+
+div, span khác nhau như nào
++ div dùng để gom nhóm nhiều thẻ HTML (dạng block)
++ span dùng để gom nhóm thẻ inline HTML (dạng inline)
+
+th, td khác nhau như nào
++ th : tiêu đề từng cột của bảng
++ td : dữ liệu của bảng
+
+ul và ol khác nhau như nào
++ ol : danh sách có thứ tự (vd: 123,abc,...)
++ ul : danh sách không có thứ tự (vd: biểu tượng tròn, vuông,...)
+
+Thuộc tính (attribute) id khác class như nào
++ id : duy nhất, đặt tên cho 1 phần tử và không được đặt cho phần tử khác
++ class : một hoặc nhiều, 1 tên có thể đặt cho nhiều phần tử khác
+
+Thẻ meta có tác dụng gì, đưa ra một vài cách sử dụng
++ meta : cung cấp thêm thông tin về trang web cho công cụ tìm kiếm 
++ tile          Tiêu đề trang web
+  charset	Xác định kiểu mã hóa ký tự của trang web
+  name		Xác định "tên của một loại thông tin" muốn cung cấp thêm (vd: viewport, author, keywords,...)
+  http-equiv	Xác định việc tải lại trang
+  content	Xác định nội dung của loại thông tin cung cấp cho trình duyệt và các công cụ tìm kiếm
+
+Thẻ meta viewport có tác dụng gì
++ meta viewport : thiết lập hiển thị cho trình duyệt tương ứng với kích thước màn hình
+
+Tại sao cần đặt CSS ở head, JS cuối cùng của thẻ </body>
++ CSS ở head : giảm thiểu CSS phải tải xuống 
++ JS cuối cùng của thẻ </body> : cải thiện tốc độ hiển thị trang (HTML tải xong thì chạy JS)
+	
+Thuộc tính srcset và alt của thẻ img dùng cho mục đích gì
++ srcet : chỉ định loại hình ảnh khác nhau cho các kích thước/ hướng/ kiểu hiển thị màn hình khác nhau
++ alt : thay thế cho hình ảnh, nếu không hiển thị
+
+Thẻ DOCTYPE để làm gì
++ DOCTYPE : khai báo loại tài liệu trang web
+
+Làm sao để gộp hàng với cột trong bảng
++ colspan="n" : gộp 2 hoặc nhiều cột
++ rowspan="n" : gộp 2 hoặc nhiều hàng
+	
+Link và thẻ a khác nhau như thế nào
++ link : xác định liên kết tài liệu hiện tại và tài nguyên bên ngoài
++ a : dùng để tạo ra các liên kết
+
+Form có những thuộc tính nào, tác dụng của từng loại. Input type = input và type = button khác nhau như thế nào
++ Thuộc tính form 
+    . Quan trọng:
+	./ action : khai báo đường dẫn xử lí dữ liệu khi người dùng ấn submit form
+	./ method : khai báo phương thức xử lý dữ liệu gồm : POST và GET
+    . Ngoài ra :
+	./ target : blank /self /parent /top : cách hiển thị
+	./ framename Phản hồi được hiển thị trong iframe được đặt tên
+	./ <autocompletetính> chỉ định xem một biểu mẫu nên bật hay tắt tính năng tự động hoàn thành.
+    	   Khi bật tính năng tự động điền, trình duyệt sẽ tự động hoàn tất các giá trị dựa trên các giá trị mà người dùng đã nhập trước đó. -->
+	./ novalidate dữ liệu trong form sẽ không bị kiểm tra trước khi gửi đi 
++ Input
+	./ type = input : hiển thị khung để nhập dữ liệu
+	./ type = button : hiển thị nút có thể submit
+
+Nếu thêm các thuộc tính defer, async vào thẻ script thì nó sẽ có khác biệt gì với thẻ script thông thường
++ script thông thường: file.html sẽ parse cho đến khi gặp script, đến đây quá trình parse sẽ tạm dừng để fetch script file
+sau đó execute code script rồi mới tiếp tục quá trình parse html
++ defer: quá trình parse html sẽ không bị dứng lại mà cho đến khi hoàn thành, quá trình download các script file được tiến hành
+song song  cuối cùng sẽ execute những script code này khi html đã parse xong 
++ async: khi quá trình parse html gặp script vẫn sẽ tiếp tục parse html cho đến khi script được download xong thì quá trình parse
+html mới tạm dừng để execute những code script này sau đó lại tiếp quá trình parse html
+=> Thêm thuộc tính defer, async vào thẻ script sẽ kiểm soát và load file tránh chặn quá trình load trang

@@ -1,0 +1,280 @@
+Inline và block khác nhau như nào -> so sánh inline, inline-block và block
++ inline : mỗi thẻ chiếm một vùng trong một dòng
++ inline-block : mỗi thẻ chiếm vùng trong một dòng được đặt chiều rộng và chiều cao phần tử
++ block : mỗi thẻ chiếm hết một dòng
+
+Box model là gì
++ box model : mô hình hộp là một hộp bao quanh mọi phần tử gồm : margin, border, padding, content 
+
+Box-sizing: border-box thì hiển thị như nào
+Box-sizing: giúp tính toán của phần tử dựa vào thuộc tính width và height đã được khai báo 
++ Box-sizing: border-box : tuỳ chỉnh như mong muốn (nên đặt ở vị trí đầu file CSS)
+
+Display có các thuộc tính nào
++ none: ẩn hiển thị
++ block: hiển thị theo hàng độc lập
++ inline: mặc định, hiển thị như nội tuyến, không ngắt dòng
++ inline-block: giống inline , cho phép thiết lập chiều rộng và chiều cao phần content
++ list-item: tạo ra phần tử dạng danh sách
+...
+
+Có các loại unit nào trong CSS, cách tính em, rem, % -> dùng đơn vị tương đối (relative unit) khi nào
+2 loại :
++ unit absolute : đơn vị tuyệt đối : phần tử được set sẽ cố định không thay đổi khi các yếu tố xung quanh tác động vào (vd : thay đổi kích thước trình duyệt,...)
+px*	pixels (1px = 1/96th of 1in)
+cm	centimeters
+mm	millimeters
+in	inches (1in = 96px = 2.54cm)
+pt	points (1pt = 1/72 of 1in)
+pc	picas (1pc = 12 pt)
++ unit relative : đơn vị tương đối : sẽ thay đổi theo phần tử nó phụ thuộc
+%*      Thay đổi phụ thuộc vào thẻ chứa nó
+rem*    Thay đổi phụ thuộc vào thẻ html
+em*     Thay đổi phụ thuộc vào thẻ gần nhất chứa nó mà có thuộc tính font-size
+vw*     Liên quan đến 1% chiều rộng của khung*
+vh*     Tương ứng với 1% chiều cao của khung*
+ex      Liên quan đến chiều cao x của phông chữ hiện tại 
+ch      Liên quan đến chiều rộng của "0" (không)
+vmin    Liên quan đến 1% kích thước nhỏ hơn của khung*
+vmax    So với 1% kích thước lớn hơn của khung*
++ cách tính em, rem, %
+    ./ % : thẻ chứa 
+    ./ rem* : html có font-size: 10px; vậy thì có width: 10rem; đổi ra sẽ có width: 100px
+    ./ em : nó sẽ tìm lần lượt từ trong ra ngoài thẻ nào chứa font-size thì nó sẽ kế thừa lại 
+
+View-width, view height là gì
++ view-width (vw) tính theo tỉ lệ chiều rộng khung thiết bị : 1 vw = 1/100 chiều rộng view-port
++ view-height (vh) tính theo tỉ lệ chiều cao khung thiết bị
+
+Text-align, text-decoration, letter-spacing, text-shadow
++ text-align : căn giữa văn bản 
++ text-decoration : trang trí văn bản
++ letter-spacing : khoảng trống giữa các chữ
++ text-shadow : đổ bóng văn bản
+
+line-height có tác dụng gì  
++ line-height : khoảng cách giữa các dòng trong văn bản
+
+Font-family, font-weight là gì
++ font-family : nhóm phông chữ, phông chữ dự phòng (trong TH không thấy phông đầu sẽ sử dùng phông 2 hoặc 3)
++ font-weight : độ dày mỏng của phông : normal bold lighter hoặc nhận từ 1 - 1000
+	
+A:link, a:visited, a:hover, a:active khác nhau như nào
++ a:link : đường link
++ a:visited : chưa trỏ chuột vào link
++ a:hover : di chuột vào link
++ a:active : nhấp chuột vào link
+
+Làm sao để bỏ dấu chấm ở list ul, ol
++ dùng thuộc tính list-style : none
+
+Border-collapse có ý nghĩa gì
++ border-collapse : thu gọn viền bảng
+	 
+Mấy loại position và sự khác nhau giữa từng loại
+4 loại:
++ relative : vị trí tương đối - không phụ thuộc vào đối tượng khác bên ngoài - lấy chính vị trí đang đứng làm toạ độ
++ absolute : vị trí tuyệt đối - phụ thuộc vào thẻ cha gần nhất cũng có thuộc tính position - lấy thẻ cha đó làm toạ độ gốc
++ fixed : vị trí cố định - phụ thuộc vào cửa sổ trình duyệt
++ sticky : vị trí bám dính - phụ thuộc vào khu vực trình duyệt (không sử dụng nhiều - ít các trình duyệt hỗ trợ)
+
+Absolute thì hỏi thêm về unit % như nào, ví dụ: left: 50% cụ thể như nào
++ set left : 50% thì phần tử được set vị trí absolute sẽ chiếm 50% phần tử cha
+ 
+Nếu set left: 100px cho relative thì sẽ hiển thị như nào
++ set left : 100px thì phần tử được set vị trí relative sẽ cách left một khoảng 100px nhưng tất cả phần tử nằm trong nó cũng sẽ di chuyển theo (vì đã set thay đổi cho phần tử cha)
+
+z-index : chỉ định thứ tự ngăn xếp của một phần tử (cái nào lớn hơn luôn đứng trước xếp thấp hơn)
++ auto: mặc định, thứ tự ngăn xếp với phần tử cha
++ number: thứ tự ngăn xếp với phàn tử cha, được phép đặt số âm
+
+Giải thích ý nghĩa các CSS selectors dưới đây?
++ "div, p": chọn tất cả <div> và <p>
++ "div p": chọn hết <p> trong <div>
++ "div > p": chọn hết <p> là con của <div>
++ "div + p": chọn <p> là thẻ liền kề với <div> (lấy duy nhất) 
++ "div ~ p": chọn hết <p> đằng sau <div> 
++ "div[class='test']": chọn hết div có class và giá trị test
++ "div[class*='test']": chọn hết div có class chứa giá trị test
++ "div[class^='test']": chọn hết div có class bắt đầu bằng giá trị test
++ "div[class$='test']": chọn hết div có class kết thúc bằng giá trị test
+
+Margin Collapse là gì
++ margin collapse : thu gọn lề trên và dưới
+	
+overflow: visible, overflow: auto khác nhau như nào
++ overflow: visible - tràn ngoài box nhưng vẫn có thể thấy đc
++ overflow: auto - tràn nhưng trong box sẽ có thanh scroll để cuộn cả ngang và dọc	
+
+Float: left có ý nghĩa gì, clear có ý nghĩa gì
++ float - cho ảnh nổi trái hoặc phải văn bản 
+    ./float : left - cho ảnh nổi trái
++ float : clear - cùng với phần tử float phần tử này sẽ đẩy lên trên hoặc xuống dưới
+
+Thứ tự ưu tiên CSS như nào, !important có ý nghĩa gì
++ Internal, External : không phân biệt sự ưu tiên, phần tử nào viết sau (viết mới nhất) sẽ được ưu tiên 
++ !important : được ưu tiên đầu tiên sau đó mới tính theo điểm
++ Điểm cao hơn thì được ưu tiên 
+	. Inline - 1000 
+        . #id - 100 
+        . .class - 10 
+        . tag - 1 
+        . Equal specificity : khi gọi tới element selector giống nhau thì nó sẽ lấy cái mới nhất
+            h1#heading-id.heading-class : 111 điểm
+            #heading-id.heading-class : 110 điểm -> nhiều điểm hơn thì ưu tiên
+        . Universal selector - 0 : chung , selector có 0 điểm thấp nhất (có nghĩa là viết như cú pháp kia thì toàn bộ các phần tử sẽ biến đổi theo nó) : cú pháp * { color: red } 
+           inherited : kế thừa : vd : html { color: red } thì tất cả các thẻ nằm trong thẻ html này đều kế thừa và biến đổi giống theo html
+
+Flexbox là gì? Nếu flex: 1 có ý nghĩa gì, justify-content và align-items sắp xếp các phần tử theo chiều nào và có những giá trị gì
++ flexbox : kiểu bố cục trang có khả năng tự cân đối kích thước, thay đổi chiều rộng/chiều cao và thứ tự phần tử bên trong để phù hợp với tất cả các loại thiết bị hiển thị và kích thước màn hình
+    ./ flex : 1 : shorthand 3 cái: flex-basis: 1 & flex-grow: 1 & flex-shrink: 1 (auto) [flex: auto]
+    ./ justify-content
+	   . flex-start: mặc định, các mục ở vị trí đầu
+	   . flex-end: các mục ở vị trí cuối
+	   . center: các mục ở vị trí giữa
+	   . space-around: các mục sẽ có khoảng cách ở giữa và 2 bên items ngoài cùng bên trái và bên phải (khoảng cách ở giữa sẽ gấp đôi khoảng cách ở 2 bên ngoài cùng)
+	   . space-between: các mục sẽ có khoảng cách ở giữa (khác với space-around là không có khoảng cách ở items 2 bên: ngoài cùng bên trái và bên phải)
+    	   . space-evenly: các mục sẽ có khoảng cách ở giữa bằng nhau kể cả 2 items ngoài cùng bên trái và bên phải
+    ./ align-items
+	   . strech: mặc định, các mục được đặt ở trên và kéo dài phù hợp với container
+	   . center: các mục được đặt ở giữa container
+	   . flex-start: các mục được đặt ở trên container
+	   . flex-end: các mục được đặt ở dưới container
+Pseudo classes là gì? VD và tác dụng của từng loại.
++ pseudo classes (lớp giả) - sử dụng để thêm các hiệu ứng đặc biệt tới một số selector mà không cần sử dụng đến JS 
+vd : (Selector):root : tham chiếu đến chính phần tử gốc của file html là cặp thẻ bao trùm tất cả tài liệu
+               :hover : được kích hoạt khi di chuột vào phần tử được định nghĩa 
+               :active : được kích hoạt khi nhấp chuột vào phần tử được định nghĩa
+               :first-child : chọn phần tử con đầu tiên : vd : <ul> thì các phàn tử con ciua rnos là <li> nếu dùng thuộc tinh này thì nó sẽ chọn phần tử đầu tiên               
+               :last-child : giống :first-child
+
+Có cách nào để căn giữa theo chiều ngang
++ Căn giữa các phần tử : margin : auto 
++ Căn giữa văn bản bên trong một phần tử : text-align: center; 
++ Căn giữa hình ảnh thẻ img:  display: block; margin-left: auto; margin-right: auto;
+	
+Có cách nào để căn giữa theo chiều dọc
++ Sử dụng padding / Căn giữa theo chiều dọc và chiều ngang - Sử dụng padding and text-align: center
++ Căn giữa theo chiều dọc - Sử dụng line-height 
++ Căn giữa theo chiều dọc - Sử dụng position: absolute; and transform 
+
+Inline style là gì
++ được đặt ở phần đầu trong file HTML, nằm giữa <style>
+
+Normalize/Reset CSS để làm gì
++ Normalize là bộ reset thông dụng, dùng để điều chỉnh các phần tử trong web hiển thị phù hợp với tất cả các trình duyệt thông dụng, 
+xoá bỏ toàn bộ margin và padding mặc định, có sẵn style cho các thẻ
+
+phân biệt display: none, visibility: hidden, và opacity: 0
++ display: none : ẩn hiển thị, phần tử ẩn sẽ không còn ở đó - không ảnh hưởng đến bố cục
++ visibility: hidden : ẩn hiển thị - ảnh hưởng đến bố cục
++ opacity: 0 - độ mờ bằng 0 - ảnh hưởng đến bố cục
+
+Tác dụng của image sprites
+image sprites : một hình ảnh lớn tạo ra bằng cách gộp nhiều ảnh nhỏ lại với nhau sao cho có thể tái sử dụng lại từng ảnh nhỏ 
+mà không bị ảnh hưởng bởi các ảnh khác
++ trình duyệt chỉ scan duy nhất một lần để lấy ra các thông tin như color table, mime type, format (tất cả các ảnh nhỏ khi 
+được gộp thành Sprite image sẽ share nhau chung một color table, mime type, format)
++ dễ dàng hơn trong việc xử lý image cache
+
+Thuộc tính nào của css có tác dụng cố định background của div, khi mà thẻ div đó scroll thì vẫn giữ nguyên vị trí của background. VD
++ cố định background của div : background-attachment: fixed;
++ div scroll vẫn giữ nguyên vị trí: background-attachment: scroll;
+
+Cách thay đổi font-family của 1 thẻ p, từ file font download ở resource bên ngoài
++ Tại Google Fonts - chọn fonts
++ Đặt <link> font ở tag head của file.html
+
+cách tạo 1 block có tỉ lệ (ví dụ như khung ảnh 1:1)
++ dùng scale: scale none | <number>{1,3};
+	./ none: không dùng tỉ lệ, bằng với scale: 1
+	./ <number>{1,3}: 3 giá trị được sử dung để nhân kích thước của phần tử
+	./ giá trị chung
+		. inherit
+		. initial
+		. revert
+		. unset
+
+Background-size, object-fit có giá trị gì và có tác dụng gì
++ background-size kích thước hình nền, giá trị là chiều dài và chiều rộng hoặc tỉ lệ phần trăm
+	./ background-size: 300px; chiều rộng 300px chiều cao tự chỉnh tỷ lệ tương ứng với tỉ lệ ban đầu
+	./ background-size: 300px 150px; chiều rộng 300px chiều cao 150px
+	./ background-size: 50%; chiều rộng 50% chiều cao tự chỉnh tỷ lệ tương ứng
+	./ contain: co dãn hình ảnh để phù hợp với khung 
+	./ cover: kéo dãn hình ảnh sao cho vừa với khung mà không gây sai lệch tỉ lệ
++ object-fit cách thay đổi kích thước của <img> hoặc <video> để phù hợp với vùng chứa nó
+	./cover: giữ nguyên tỉ lệ co và lấp đầy kích thước đã cho , ảnh sẽ được cắt bớt để vừa
+	./fill: mặc định, ảnh được thay đổi kích thước để lấp đầy kích thước đã cho, nếu cần sẽ đc kéo hoặc thu nhỏ để vừa khung hình
+	./contain: giữ nguyên tỉ lệ khung hình của nó, nhưng được thay đổi kích thước để vừa kích thước đã cho
+	./scale-down: ảnh được thu nhỏ thành phiên bản nhỏ nhất của none hoặc contain
+	./none: không thay đổi
+
+responsive là gì? Mobile-first, desktop-first khác nhau thế nào, nên dùng mobile-first hay desktop-first? cách dùng media query
++ responsive: kỹ thuật giúp web hiển thị tương thích với nhiều kích thước màn hình khác nhau (mobile, tablet, PC, ..)
++ Khác nhau mobile-first và desktop-first
+	./ mobile-first
+		.chuyển đổi độ phân giải: từ độ phân giải cao đến độ phân giải thấp 
+		.lượng văn bản: nhiều
+		.tốc độ tải về: chậm
+		.cỡ chữ: nhỏ
+		.lời kêu gọi hành động: nhiều trên mỗi trang
+		.truy cập phần cứng: không dễ truy cập phần cứng khác thiết bị
+	./ desktop-first
+		.chuyển đổi độ phân giải: từ độ phân giải thấp đến độ phân giải cao
+		.lượng văn bản: ít
+		.tốc độ tải về: nhanh
+		.cỡ chữ: lớn
+		.lời kêu gọi hành động: một trên mỗi trang
+		.truy cập phần cứng: dễ dàng truy cập vào máy ảnh do động, micro, đèn flash,..
++ nên dùng: xét xem phụ thuộc vào cái gì
+	./ loại khách hàng
+	./ giao diện người dùng
+	./ loại sản phẩm
+	./ ngân sách
++ cách dùng media query
+media query : chuỗi truy vấn để giúp dễ dàng chọn ra kích thước màn hình cụ thể
+cú pháp : @media query (1)not|only (2)mediatype (1)and ((3)mediafeature (1)and|or|not (3)mediafeature){
+	CSS-Code;
+}
+	./ (1)keyword
+	   not
+	   only
+	   and
+	   or
+	./ (2)mediatype
+	   print - chế độ in
+	   screen - màn hình (tất cả các thiết bị có màn hình)
+	   speech - màn hình mà nói đc
+	   all-default - mặc định (lấy tất cả)
+	./ (3)mediafeature
+	   min-width
+	   max-width
+	   ...
+	   (w3 - media feture)
+	./ polyfill  
+cách dùng:
+c1: dùng @media
+c2: khai báo trong tag link với thuộc tính media
+c3: dùng khoá @import để load một external stylesheet bên trong một external stylesheet 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
